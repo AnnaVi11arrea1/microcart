@@ -1,9 +1,12 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-    images: {
-        domains: ['via.placeholder.com'],
-      },
-  }
+// {import('next').NextConfig}
+
+// const path = require('path');
+
+// module.exports = {
+//     sassOtions: {
+//         includesPaths: [path.join(__public/themes/graytones.scss, 'styles')],
+//       },
+//   }
 
 
-export default nextConfig;
+// export default nextConfig;

@@ -1,15 +1,13 @@
-
+'use client'
 import React, { useEffect } from 'react';
-import {useState} from 'react';
-// import "slider-color-picker";
 import ColorOptionSlider from './ColorSliders';
-
+import { useTheme } from '../hooks/themeHooks';
 
 
 const themesSheets = [
-    {  value: "Default",  src:"/themes/index.scss"},
-    { value: "Pastel Theme",  src:"/themes/pastel.scss"},
-    { value: "Gray Theme",  src:"/themes/graytones.scss"},
+    { value: "default",  src:"/themes/index.scss"},
+    { value: "pastel",  src:"/themes/pastel.scss"},
+    { value: "graytones",  src:"/themes/graytones.scss"},
 
     // add more themes as needed, css styles will be linked to the selected theme file
   ]
@@ -29,47 +27,15 @@ const designElements = [
 ];
 
  function Droptheme () {
-    const loadSCSS = (href) => {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = href;
-        document.head.appendChild(link);
-        console.log(`CSS loaded: ${href}`);
-    };
 
-    const [theme, setTheme] = useState("Default");  
+    const { setTheme } = useTheme();
 
     const handleThemeChange = (e) => {
-        const selectedTheme = e.target.value;
-        setTheme(selectedTheme);   
+        setTheme(e.target.value);
 
-        const themeObj = themesSheets.find((obj) => obj.value === selectedTheme);
-        if (themeObj) {
-            console.log(`Loading theme: ${selectedTheme}), src:${themeObj.src}`);
-            loadSCSS(themeObj.src);
-        } else {
-            console.log(`No theme found for ${selectedTheme}`);
-        }
+
     };
 
-    // use effect to load the selected theme when the component mounts
-    useEffect(() => {
-        const savedTheme = localStorage.getItem("selectedTheme");
-        if (savedTheme) {
-            setTheme(savedTheme);
-            const themeObj = themesSheets.find((obj) => obj.value === savedTheme);
-            if (themeObj) {
-                console.log(`Loading theme: ${savedTheme}), src:${themeObj.src}`);
-                loadSCSS(themeObj.src);
-            }
-        }
-        }, []);
-    
-    useEffect(() => {
-        if ("selectedTheme") {
-            localStorage.setItem("selectedTheme", theme);
-        }
-    }, [theme]);
     
         return (
         <div className="theme_picker">
@@ -77,7 +43,7 @@ const designElements = [
             <h1 className="cabinfont">Themes</h1>
                 <div>
                     <br />
-                    <select value={theme} onChange={handleThemeChange} className="login">
+                    <select onChange={handleThemeChange} className="login">
                         <option value="selectedTheme" >Select Theme</option>
                         {themesSheets.map((theme) => 
                         <option key={theme.key} value={theme.value} 

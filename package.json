@@ -28,7 +28,8 @@
     "scss": "^0.2.4",
     "sequelize": "^6.37.3",
     "slider-color-picker": "^0.2.3",
-    "sqlite3": "^5.1.7"
+    "sqlite3": "^5.1.7",
+    "styled-components": "^6.1.12"
   },
   "devDependencies": {
     "@types/node": "20.14.9",
