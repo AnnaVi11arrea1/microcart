@@ -14,6 +14,10 @@ pnpm dev
 bun dev
 ```
 
+
+![Screenshot 2025-02-17 143714](https://github.com/user-attachments/assets/1552cf19-dd71-4f4e-b4cc-f39180a87bfe)
+
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
