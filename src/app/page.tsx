@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Intro from "./components/Intro"
 import Login from "./components/Login.js"
-import Signup from "./components/Signup.js"
+import Signup from "./components/SignUp.js"
 
 export default function Home() {
   return (

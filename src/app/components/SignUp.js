@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Signup() {
+function SignUp() {
   return (
     <section>
       <div className="Signup">
@@ -17,4 +17,4 @@ function Signup() {
 };
 
 
-export default Signup;
+export default SignUp;

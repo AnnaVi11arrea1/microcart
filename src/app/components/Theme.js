@@ -637,11 +637,135 @@ const ThemeProvider = ({ children }) => {
         if (savedTheme) {
             setTheme(savedTheme);
         }
-    },
-        [],)
-
+    }, []);
+    
+    const containerStyles = {
+        maxWidth: "1024px",
+        // Add other styles as needed
+    };
+    
+    const headerareaStyles = {
+        display: "flex",
+        justifyContent: "space-between",
+        backgroundColor: "black",
+        flexDirection: "column",
+        // Add other styles as needed
+    };
+    
+    const pageheaderStyles = {
+        position: "relative",
+        fontFamily: "'Cabin', sans-serif",
+        fontOpticalSizing: "auto",
+        fontWeight: "700",
+        fontStyle: "normal",
+        fontVariationSettings: "'wdth' 100",
+        fontSize: "1.5em",
+        display: "flex",
+        justifyContent: "center",
+        paddingTop: "10px",
+        paddingBottom: "10px",
+        borderBottom: "1px solid #9700ff",
+        borderTop: "2px solid aqua",
+        backgroundImage: "conic-gradient( #9700ff, aqua, #9700ff)",
+        backgroundClip: "text",
+        webkitBackgroundClip: "text",
+        webkitTextFillColor: "transparent",
+        letterSpacing: "0.1em",
+        // Add other styles as needed
+    };
+    
+    const topStyles = {
+        display: "flex",
+        justifyContent: "space-evenly",
+        paddingTop: "20px",
+        // Add other styles as needed
+    };
+    
+    const inputStyles = {
+        backgroundImage: "linear-gradient(#9700ff, transparent)",
+        display: "flex",
+        padding: "10px 8px",
+        paddingLeft: "15px",
+        margin: "5px",
+        borderRadius: "50px",
+        color: "#ddd",
+        backgroundColor: "#02218a",
+        boxShadow: "inset 2px 3px 20px 5px #000000",
+        border: "2px solid #9700ff",
+        // Add other styles as needed
+    };
+    
+    const labelStyles = {
+        // Add styles as needed
+    };
+    
+    const navStyles = {
+        color: "#9700ff",
+        boxShadow: "inset 0px 0px 5px 0px #000000",
+        borderRadius: "50px",
+        padding: "10px 8px",
+        border: "1px solid #9700ff",
+        borderTop: "2px solid aqua",
+        backgroundImage: "conic-gradient( #9700ff, aqua, #9700ff)",
+        backgroundClip: "text",
+        webkitBackgroundClip: "text",
+        webkitTextFillColor: "transparent",
+        letterSpacing: "0.1em",
+        // Add other styles as needed
+    };
+    
+    const searchBtnStyles = {
+        padding: "10px",
+        // Add other styles as needed
+    };
+    
+    const navListStyles = {
+        display: "flex",
+        borderRadius: "50px",
+        // Add other styles as needed
+    };
+    
+    const microfyHomeStyles = {
+        marginBottom: "50px",
+        paddingTop: "50px",
+        borderTop: "1px solid aqua",
+        borderRadius: "50px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-start",
+        backgroundColor: "#02218a",
+        width: "100%",
+        height: "100%",
+        // Add other styles as needed
+    };
+    
+    const sectionStyles = {
+        backgroundImage: "radial-gradient(transparent, blue, #9700ff)",
+        fontSize: "1.5em",
+        padding: "5px",
+        margin: "20px",
+        borderRadius: "50px",
+        border: "3px solid",
+        display: "flex",
+        alignSelf: "center",
+        flexDirection: "column",
+        fontFamily: "'Cabin', sans-serif",
+        marginTop: "30px",
+        // Add other styles as needed
+    };
+    
+    const logoStyles = {
+        backgroundImage: "linear-gradient( #9700ff, aqua, blue, #9700ff)",
+        backgroundSize: "cover",
+        padding: "10px",
+        borderRadius: "50px",
+        backgoundClip: "text",
+        webkitBackgroundClip: "text",
+        webkitTextFillColor: "transparent",
+        // Add other styles as needed
+    };
+    
     useEffect(() => {
-
         // BODY BODY SOME BODY SAVE ME THERE IS TOO MANY USE EFFECTS //
         document.body.style.backgroundImage = themes[theme].body.backgroundImage; // update body background color when theme changes
         document.body.style.color = themes[theme].body.color;
@@ -651,108 +775,99 @@ const ThemeProvider = ({ children }) => {
         document.body.style.fontFamily = themes[theme].body.fontFamily;
         document.body.style.webkitFontSmoothing = themes[theme].body.webkitFontSmoothing;
         document.body.style.moz0sxFontSmoothing = themes[theme].body.mozOsxFontSmoothing;
-
+    
         // Apply styles to all elements with the class "container"
         const containers = document.getElementsByClassName("container");
         for (let i = 0; i < containers.length; i++) {
             Object.assign(containers[i].style, containerStyles);
-        };
-
+        }
+    
         const header_area = document.getElementsByClassName("header_area");
         for (let i = 0; i < header_area.length; i++) {
-            Object.assign(header_area[i].style, header_areaStyles);
-        };
-
+            Object.assign(header_area[i].style, headerareaStyles);
+        }
+    
         const pageheader = document.getElementsByClassName("pageheader");
         for (let i = 0; i < pageheader.length; i++) {
             Object.assign(pageheader[i].style, pageheaderStyles);
-        };
-
+        }
+    
         const top = document.getElementsByClassName("top");
         for (let i = 0; i < top.length; i++) {
             Object.assign(top[i].style, topStyles);
-        };
-
+        }
+    
         const input = document.getElementsByClassName("input");
         for (let i = 0; i < input.length; i++) {
             Object.assign(input[i].style, inputStyles);
-        };
-
+        }
+    
         const label = document.getElementsByClassName("label");
         for (let i = 0; i < label.length; i++) {
             Object.assign(label[i].style, labelStyles);
-        };
-
+        }
+    
         const nav = document.getElementsByClassName("nav");
         for (let i = 0; i < nav.length; i++) {
             Object.assign(nav[i].style, navStyles);
-        };
-
+        }
+    
         const searchBtn = document.getElementsByClassName("searchBtn");
         for (let i = 0; i < searchBtn.length; i++) {
             Object.assign(searchBtn[i].style, searchBtnStyles);
-        };
-
+        }
+    
         const navList = document.getElementsByClassName("navList");
         for (let i = 0; i < navList.length; i++) {
             Object.assign(navList[i].style, navListStyles);
-        };
-
+        }
+    
         const microfyHome = document.getElementsByClassName("microfyHome");
         for (let i = 0; i < microfyHome.length; i++) {
             Object.assign(microfyHome[i].style, microfyHomeStyles);
-        };
-
+        }
+    
         const section = document.getElementsByClassName("section");
         for (let i = 0; i < section.length; i++) {
             Object.assign(section[i].style, sectionStyles);
-        };
-
+        }
+    
         const logo = document.getElementsByClassName("logo");
         for (let i = 0; i < logo.length; i++) {
             Object.assign(logo[i].style, logoStyles);
+        }
+    
+        // Create a style element for the ::after pseudo-element
+        const styleElement = document.createElement('style');
+        styleElement.innerHTML = `
+            body::after {
+                content: '${themes[theme].body.afterContent.content}';
+                position: ${themes[theme].body.afterContent.position};
+                z-index: ${themes[theme].body.afterContent.zIndex};
+                bottom: ${themes[theme].body.afterContent.bottom};
+                left: ${themes[theme].body.afterContent.left};
+                width: ${themes[theme].body.afterContent.width};
+                height: ${themes[theme].body.afterContent.height};
+                background-size: ${themes[theme].body.afterContent.backgroundSize};
+                background-position: ${themes[theme].body.afterContent.backgroundPosition};
+                background-image: ${themes[theme].body.afterContent.backgroundImage};
+                animation: ${themes[theme].body.afterContent.animation};
+            }
+        `;
+        document.head.appendChild(styleElement);
+    
+        // Clean up the style element when the component unmounts or theme changes
+        return () => {
+            document.head.removeChild(styleElement);
         };
-
-
-
-
-
-
-
-
-
-         // Create a style element for the ::after pseudo-element
-         const styleElement = document.createElement('style');
-         styleElement.innerHTML = `
-             body::after {
-                 content: '${themeStyles.afterContent.content}';
-                 position: ${themeStyles.afterContent.position};
-                 z-index: ${themeStyles.afterContent.zIndex};
-                 bottom: ${themeStyles.afterContent.bottom};
-                 left: ${themeStyles.afterContent.left};
-                 width: ${themeStyles.afterContent.width};
-                 height: ${themeStyles.afterContent.height};
-                 background-size: ${themeStyles.afterContent.backgroundSize};
-                 background-position: ${themeStyles.afterContent.backgroundPosition};
-                 background-image: ${themeStyles.afterContent.backgroundImage};
-                 animation: ${themeStyles.afterContent.animation};
-             }
-         `;
-         document.head.appendChild(styleElement);
- 
-         // Clean up the style element when the component unmounts or theme changes
-         return () => {
-             document.head.removeChild(styleElement);
-         };
-
-        
-     }, [theme]);
+    }, [theme]);
+    
     return (
-           <ThemeContext.Provider value={{ theme, setTheme }}>
+        <ThemeContext.Provider value={{ theme, setTheme }}>
             {children}
         </ThemeContext.Provider>
     );
-};
-
-export default ThemeProvider;
+    };
+    
+    export default ThemeProvider;
 

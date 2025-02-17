@@ -5,7 +5,7 @@ import Image from 'next/image';
 const Product = () => {
     const [product, setProduct] = useState([]);
     useEffect(() => {
-        fetch("https://jsonplaceholder.typicode.com/photos")
+        fetch("https://picsum.photos/200/300")
         // fetch('https://dummyjson.com/products')    
         .then((res) => {
             return res.json();
